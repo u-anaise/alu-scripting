@@ -17,10 +17,10 @@ def top_ten(subreddit):
         )
         posts = response.json().get("data", {}).get("children", [])
     except Exception:
-        print("OK")
+        print("OK", end="")
         return
     if response.status_code != 200 or not posts:
-        print("OK")
+        print("OK", end="")
         return
     for post in posts:
         print(post.get("data", {}).get("title"))
